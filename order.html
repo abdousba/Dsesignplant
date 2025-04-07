@@ -28,77 +28,31 @@
     <!-- ✅ نموذج الطلب -->
     <form action="https://formsubmit.co/boubchirabdelilah@gmail.com" method="POST">
 
-      <!-- الحقول المخصصة للنموذج -->
-      <input type="text" name="name" placeholder="الاسم الكامل" class="w-full border rounded-lg p-3 focus:outline-none focus:ring focus:ring-green-200" required/>
-      <input type="email" name="email" placeholder="البريد الإلكتروني" class="w-full border rounded-lg p-3 focus:outline-none focus:ring focus:ring-green-200" required/>
-      <input type="tel" name="phone" placeholder="رقم الهاتف" class="w-full border rounded-lg p-3 focus:outline-none focus:ring focus:ring-green-200" required/>
-      <input type="text" name="address" placeholder="العنوان" class="w-full border rounded-lg p-3 focus:outline-none focus:ring focus:ring-green-200" required/>
+      <input type="text" name="name" placeholder="الاسم الكامل" class="w-full border rounded-lg p-3 mb-3" required/>
+      <input type="email" name="email" placeholder="البريد الإلكتروني" class="w-full border rounded-lg p-3 mb-3" required/>
+      <input type="tel" name="phone" placeholder="رقم الهاتف" class="w-full border rounded-lg p-3 mb-3" required/>
+      <input type="text" name="address" placeholder="العنوان" class="w-full border rounded-lg p-3 mb-3" required/>
 
-      <!-- حقل الولاية -->
-      <select name="state" class="w-full border rounded-lg p-3 focus:outline-none focus:ring focus:ring-green-200" required>
-        <option disabled selected>اختر ولايتك</option>
-        <option>أدرار</option>
-  <option>الشلف</option>
-  <option>الأغواط</option>
-  <option>أم البواقي</option>
-  <option>باتنة</option>
-  <option>بجاية</option>
-  <option>بسكرة</option>
-  <option>بشار</option>
-  <option>البليدة</option>
-  <option>البويرة</option>
-  <option>تمنراست</option>
-  <option>تبسة</option>
-  <option>تلمسان</option>
-  <option>تيارت</option>
-  <option>تيزي وزو</option>
-  <option>الجزائر</option>
-  <option>الجلفة</option>
-  <option>جيجل</option>
-  <option>سطيف</option>
-  <option>سعيدة</option>
-  <option>سكيكدة</option>
-  <option>سيدي بلعباس</option>
-  <option>عنابة</option>
-  <option>قالمة</option>
-  <option>قسنطينة</option>
-  <option>المدية</option>
-  <option>مستغانم</option>
-  <option>المسيلة</option>
-  <option>معسكر</option>
-  <option>ورقلة</option>
-  <option>وهران</option>
-  <option>البيض</option>
-  <option>إيليزي</option>
-  <option>برج بوعريريج</option>
-  <option>بومرداس</option>
-  <option>الطارف</option>
-  <option>تيندوف</option>
-  <option>تيسمسيلت</option>
-  <option>الوادي</option>
-  <option>خنشلة</option>
-  <option>سوق أهراس</option>
-  <option>تيبازة</option>
-  <option>ميلة</option>
-  <option>عين الدفلى</option>
-  <option>النعامة</option>
-  <option>عين تموشنت</option>
-  <option>غرداية</option>
-  <option>غليزان</option>
-  <option>تيميمون</option>
-  <option>برج الحواس</option>
-  <option>أولاد جلال</option>
-  <option>بني عباس</option>
-  <option>عين صالح</option>
-  <option>جانت</option>
-  <option>المغير</option>
-  <option>المنيعة</option>
-  <option>حاسي مسعود</option>
-  <option>تقرت</option>
+      <!-- ✅ نوع التوصيل -->
+      <select id="delivery-type" name="delivery_type" class="w-full border rounded-lg p-3 mb-3" required>
+        <option disabled selected>اختر نوع التوصيل</option>
+        <option value="مكتبي">المكتب</option>
+        <option value="منزلي">المنزل (+200 دج)</option>
       </select>
 
-      <!-- حقل اسم الموديل المختار -->
-      <textarea name="model" id="model-names" class="w-full border rounded-lg p-3 focus:outline-none focus:ring focus:ring-green-200" rows="2" readonly></textarea>
+      <!-- ✅ حقل الولاية -->
+      <select id="state-select" name="state" class="w-full border rounded-lg p-3 mb-3" required>
+        <option disabled selected>اختر ولايتك</option>
+        <option>الجزائر</option>
+        <option>البليدة</option>
+        <option>وهران</option>
+        <option>قسنطينة</option>
+        <option>سطيف</option>
+        <!-- أضف باقي الولايات حسب الحاجة -->
+      </select>
+
+      <!-- ✅ اسم الموديلات -->
+      <textarea name="model" id="model-names" class="w-full border rounded-lg p-3 mb-3" rows="2" readonly></textarea>
 
       <button type="submit" class="w-full bg-green-500 text-white font-bold py-3 rounded-lg hover:bg-green-600 transition-all">
         إرسال الطلب
@@ -108,13 +62,23 @@
 
   <script>
     const cart = JSON.parse(localStorage.getItem("cartItems")) || [];
-    const total = localStorage.getItem("cartTotal") || 0;
+    const baseTotal = parseInt(localStorage.getItem("cartTotal")) || 0;
 
     const gallery = document.getElementById("selected-items");
     const totalPriceEl = document.getElementById("total-price");
     const modelNamesEl = document.getElementById("model-names");
 
-    totalPriceEl.textContent = total;
+    const stateSelect = document.getElementById("state-select");
+    const deliverySelect = document.getElementById("delivery-type");
+
+    const deliveryPrices = {
+      "الجزائر": 600,
+      "البليدة": 700,
+      "وهران": 800,
+      "قسنطينة": 850,
+      "سطيف": 750,
+      // أضف باقي الأسعار حسب الولايات
+    };
 
     const modelNames = [];
 
@@ -138,6 +102,19 @@
     });
 
     modelNamesEl.value = modelNames.join(", ");
+
+    function updateTotalPrice() {
+      const selectedState = stateSelect.value;
+      const deliveryType = deliverySelect.value;
+
+      const baseFee = deliveryPrices[selectedState] || 0;
+      const finalFee = deliveryType === "منزلي" ? baseFee + 200 : baseFee;
+
+      totalPriceEl.textContent = baseTotal + finalFee;
+    }
+
+    stateSelect.addEventListener("change", updateTotalPrice);
+    deliverySelect.addEventListener("change", updateTotalPrice);
   </script>
 </body>
 </html>
