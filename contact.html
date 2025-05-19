@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اتصل بنا | فن الرسم على أحواض النباتات</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+        }
+        .breadcrumb {
+            padding: 1rem 0;
+            font-size: 0.9rem;
+        }
+        .breadcrumb a {
+            color: #4b7b1d;
+            text-decoration: none;
+        }
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-green-50 to-white text-gray-800">
+
+    <header class="bg-green-100 text-right py-8 shadow-md">
+        <div class="max-w-6xl mx-auto px-4">
+            <h1 class="text-3xl font-bold text-green-800">اتصل بنا</h1>
+            <p class="text-lg mt-4 text-gray-600">يسعدنا تواصلك معنا للإجابة على استفساراتك أو مساعدتك في طلبك.</p>
+        </div>
+    </header>
+
+    <nav class="bg-green-700 text-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <ul class="flex flex-wrap justify-center md:justify-start space-x-6 space-x-reverse py-3">
+                <li><a href="index.html" class="hover:text-orange-300">الرئيسية</a></li>
+                <li><a href="about.html" class="hover:text-orange-300">من نحن</a></li>
+                <li><a href="blog.html" class="hover:text-orange-300">المدونة</a></li>
+                <li><a href="contact.html" class="hover:text-orange-300 font-semibold">اتصل بنا</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="breadcrumb max-w-6xl mx-auto px-4">
+        <a href="index.html">الرئيسية</a> / <span class="text-gray-500">اتصل بنا</span>
+    </div>
+
+    <main class="max-w-6xl mx-auto px-4 py-8">
+        <section class="grid md:grid-cols-2 gap-8 text-right">
+            <div>
+                <h2 class="text-2xl font-bold text-green-700 mb-4">تواصل معنا</h2>
+                <p class="text-gray-700 leading-relaxed mb-6">إذا كان لديك أي أسئلة أو استفسارات أو ترغب في طلب تصميم خاص، فلا تتردد في التواصل معنا عبر إحدى الوسائل التالية:</p>
+
+                <div class="mb-4">
+                    <h3 class="text-xl font-semibold text-green-600 mb-2">معلومات الاتصال</h3>
+                    <p class="text-gray-700"><span class="font-bold">الهاتف:</span> <a href="tel:00213673697554" class="text-green-800 hover:underline">00213673697554</a></p>
+                    <p class="text-gray-700"><span class="font-bold">البريد الإلكتروني:</span> <a href="mailto:boubchirabdelilah@gmail.com" class="text-green-800 hover:underline">boubchirabdelilah@gmail.com</a></p>
+                    <p class="text-gray-700"><span class="font-bold">العنوان:</span> <span class="text-gray-800">سيدي بلعباس، الجزائر</span></p>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-semibold text-green-600 mb-2">تابعنا على وسائل التواصل الاجتماعي</h3>
+                    <div class="mt-2">
+                        <a href="#" class="inline-block bg-blue-600 text-white p-2 rounded-full mr-2 hover:bg-blue-700"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="inline-block bg-pink-600 text-white p-2 rounded-full mr-2 hover:bg-pink-700"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="inline-block bg-blue-400 text-white p-2 rounded-full hover:bg-blue-500"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <h2 class="text-2xl font-bold text-green-700 mb-4">أرسل لنا رسالة</h2>
+                <form class="bg-green-50 p-6 rounded-lg shadow-md">
+                    <div class="mb-4">
+                        <label for="name" class="block text-gray-700 text-sm font-bold mb-2">الاسم:</label>
+                        <input type="text" id="name" name="name" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="email" class="block text-gray-700 text-sm font-bold mb-2">البريد الإلكتروني:</label>
+                        <input type="email" id="email" name="email" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="subject" class="block text-gray-700 text-sm font-bold mb-2">الموضوع:</label>
+                        <input type="text" id="subject" name="subject" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                    </div>
+                    <div class="mb-6">
+                        <label for="message" class="block text-gray-700 text-sm font-bold mb-2">الرسالة:</label>
+                        <textarea id="message" name="message" rows="5" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required></textarea>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="bg-orange-400 hover:bg-orange-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">إرسال الرسالة</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-green-800 text-white py-8">
+        <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-3 gap-8">
+            <div class="text-right">
+                <h3 class="text-xl font-bold mb-4">فن الرسم على أحواض النباتات</h3>
+                <p>متخصصون في تصميم وتزيين أحواض النباتات بأيدي فنانين محترفين لتقديم أجمل القطع الفنية لنباتاتك.</p>
+            </div>
+            <div class="text-right">
+                <h3 class="text-xl font-bold mb-4">روابط سريعة</h3>
+                <ul class="space-y-2">
+                    <li><a href="index.html" class="hover:text-orange-300">الرئيسية</a></li>
+                    <li><a href="about.html" class="hover:text-orange-300">من نحن</a></li>
+                    <li><a href="contact.html" class="hover:text-orange-300 font-semibold">اتصل بنا</a></li>
+                </ul>
+            </div>
+            <div class="text-right">
+                <h3 class="text-xl font-bold mb-4">تواصل معنا</h3>
+                <p>الهاتف: <span class="font-bold">00213673697554</span></p>
+                <p>boubchirabdelilah@gmail.com</p>
+                <div class="mt-4">
+                    <a href="#" class="inline-block bg-blue-600 text-white p-2 rounded-full mr-2"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="inline-block bg-pink-600 text-white p-2 rounded-full mr-2"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="inline-block bg-blue-400 text-white p-2 rounded-full"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-6xl mx-auto px-4 pt-6 mt-6 border-t border-green-700 text-center">
+            <p>&copy; 2023 فن الرسم على أحواض النباتات. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</body>
+</html>
