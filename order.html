@@ -1,182 +1,631 @@
 <!DOCTYPE html>
+
 <html lang="ar" dir="rtl">
+
 <head>
+
   <meta charset="UTF-8" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>نموذج الطلب</title>
+
+  <meta name="description" content="متجر متخصص في فن الرسم على أحواض النباتات، نقدم تصميمات فريدة ومبتكرة بأيدي فنانين محترفين">
+
+  <meta name="keywords" content="رسم على أحواض نباتات, فن نباتات, تزيين أحواض النباتات, هدايا نباتية, ديكور نباتي">
+
+  <title>فن الرسم على أحواض النباتات | تصميمات فريدة بأيدي فنانين محترفين</title>
+
+  <link rel="canonical" href="https://www.yourwebsite.com/" />
+
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+
   <style>
+
     body {
+
       font-family: 'Cairo', sans-serif;
+
     }
+
+    .zoom-overlay {
+
+      position: fixed;
+
+      top: 0;
+
+      right: 0;
+
+      bottom: 0;
+
+      left: 0;
+
+      background: rgba(0,0,0,0.8);
+
+      display: flex;
+
+      justify-content: center;
+
+      align-items: center;
+
+      z-index: 1000;
+
+    }
+
+    .zoom-overlay img {
+
+      max-width: 90%;
+
+      max-height: 90%;
+
+      border-radius: 1rem;
+
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+
+    }
+
+    .breadcrumb {
+
+      padding: 1rem 0;
+
+      font-size: 0.9rem;
+
+    }
+
+    .breadcrumb a {
+
+      color: #4b7b1d;
+
+      text-decoration: none;
+
+    }
+
+    .breadcrumb a:hover {
+
+      text-decoration: underline;
+
+    }
+
   </style>
+
 </head>
-<body class="bg-green-50 min-h-screen flex flex-col items-center justify-center px-4 py-8">
 
-  <div class="bg-white p-6 rounded-xl shadow-xl w-full max-w-3xl">
-    <!-- زر العودة إلى الصفحة الرئيسية -->
-    <div class="mb-4">
-      <a href="index.html" class="text-green-600 hover:text-green-800 font-semibold flex items-center">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
-          <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd" />
-        </svg>
-        العودة إلى الصفحة الرئيسية
-      </a>
-    </div>
+<body class="bg-gradient-to-br from-green-50 to-white text-gray-800">
 
-    <h2 class="text-2xl font-bold text-center text-green-700 mb-4">نموذج الطلب</h2>
 
-    <!-- ✅ عرض الصور المختارة -->
-    <div id="selected-items" class="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-6"></div>
 
-    <!-- ✅ عرض السعر الإجمالي -->
-    <div class="text-center mb-6 text-lg font-bold text-green-800">
-      السعر الإجمالي: <span id="total-price">0</span> دج
-    </div>
+  <header class="bg-green-100 text-right py-8 shadow-md relative">
 
-    <!-- ✅ نموذج الطلب -->
-    <form action="https://formsubmit.co/boubchirabdelilah@gmail.com" method="POST">
+    <div class="max-w-6xl mx-auto px-4">
 
-      <input type="text" name="name" placeholder="الاسم الكامل" class="w-full border rounded-lg p-3 mb-3" required/>
-      <input type="email" name="email" placeholder="البريد الإلكتروني" class="w-full border rounded-lg p-3 mb-3" required/>
-      <input type="tel" name="phone" placeholder="رقم الهاتف" class="w-full border rounded-lg p-3 mb-3" required/>
-      <input type="text" name="address" placeholder="العنوان" class="w-full border rounded-lg p-3 mb-3" required/>
+      <h1 class="text-3xl font-bold text-green-800">الأحواض المزينة</h1>
 
-      <!-- ✅ نوع التوصيل -->
-      <select id="delivery-type" name="delivery_type" class="w-full border rounded-lg p-3 mb-3" required>
-        <option disabled selected>اختر نوع التوصيل</option>
-        <option value="مكتبي">المكتب</option>
-        <option value="منزلي">المنزل (+200 دج)</option>
-      </select>
+      <p class="text-lg mt-4 text-gray-600">طلباتك ترعاها أيادي مبدعة في انتظارك</p>
 
-      <!-- ✅ حقل الولاية -->
-      <select id="state-select" name="state" class="w-full border rounded-lg p-3 mb-3" required>
-    <option disabled selected>اختر ولايتك</option>
-    <option value="1">أدرار</option>
-    <option value="2">الشلف</option>
-    <option value="3">الأغواط</option>
-    <option value="4">أم البواقي</option>
-    <option value="5">باتنة</option>
-    <option value="6">بجاية</option>
-    <option value="7">بسكرة</option>
-    <option value="8">بشار</option>
-    <option value="9">البليدة</option>
-    <option value="10">البويرة</option>
-    <option value="11">تمنراست</option>
-    <option value="12">تبسة</option>
-    <option value="13">تلمسان</option>
-    <option value="14">تيارت</option>
-    <option value="15">تيزي وزو</option>
-    <option value="16">الجزائر</option>
-    <option value="17">الجلفة</option>
-    <option value="18">جيجل</option>
-    <option value="19">سطيف</option>
-    <option value="20">سعيدة</option>
-    <option value="21">سكيكدة</option>
-    <option value="22">سيدي بلعباس</option>
-    <option value="23">عنابة</option>
-    <option value="24">قالمة</option>
-    <option value="25">قسنطينة</option>
-    <option value="26">المدية</option>
-    <option value="27">مستغانم</option>
-    <option value="28">المسيلة</option>
-    <option value="29">معسكر</option>
-    <option value="30">ورقلة</option>
-    <option value="31">وهران</option>
-    <option value="32">البيض</option>
-    <option value="33">إليزي</option>
-    <option value="34">برج بوعريريج</option>
-    <option value="35">بومرداس</option>
-    <option value="36">الطارف</option>
-    <option value="37">تندوف</option>
-    <option value="38">تيسمسيلت</option>
-    <option value="39">الوادي</option>
-    <option value="40">خنشلة</option>
-    <option value="41">سوق أهراس</option>
-    <option value="42">تيبازة</option>
-    <option value="43">ميلة</option>
-    <option value="44">عين الدفلى</option>
-    <option value="45">النعامة</option>
-    <option value="46">عين تموشنت</option>
-    <option value="47">غرداية</option>
-    <option value="48">غليزان</option>
-    <option value="49">تيميمون</option>
-    <option value="50">برج باجي مختار</option>
-    <option value="51">أولاد جلال</option>
-    <option value="52">بني عباس</option>
-    <option value="53">عين صالح</option>
-    <option value="54">عين قزام</option>
-    <option value="55">تقرت</option>
-    <option value="56">جانت</option>
-    <option value="57">المغير</option>
-    <option value="58">المنيعة</option>
-</select>
+      <button onclick="openCart()" class="absolute left-4 top-4 bg-orange-400 text-white px-4 py-1 rounded-lg shadow hover:bg-orange-500">
 
-      <!-- ✅ اسم الموديلات -->
-      <textarea name="model" id="model-names" class="w-full border rounded-lg p-3 mb-3" rows="2" readonly></textarea>
-
-      <button type="submit" class="w-full bg-green-500 text-white font-bold py-3 rounded-lg hover:bg-green-600 transition-all">
-        إرسال الطلب
+     (<span id="cart-count">0</span>)
+السلة
       </button>
-    </form>
+
+    </div>
+
+  </header>
+
+
+
+  <nav class="bg-green-700 text-white">
+
+    <div class="max-w-6xl mx-auto px-4">
+
+      <ul class="flex flex-wrap justify-center md:justify-start space-x-6 space-x-reverse py-3">
+
+        <li><a href="index.html" class="hover:text-orange-300 font-semibold">الرئيسية</a></li>
+
+        <li><a href="about.html" class="hover:text-orange-300">من نحن</a></li>
+
+        <li><a href="blog.html" class="hover:text-orange-300">المدونة</a></li>
+
+        <li><a href="contact.html" class="hover:text-orange-300">اتصل بنا</a></li>
+
+      </ul>
+
+    </div>
+
+  </nav>
+
+
+
+  <div class="breadcrumb max-w-6xl mx-auto px-4">
+
+    <a href="index.html">الرئيسية</a> / 
+
   </div>
 
+
+
+  <main class="max-w-6xl mx-auto px-4 py-8">
+
+    <section class="mb-8 text-right">
+
+      <h2 class="text-2xl font-bold text-green-700 mb-4">أحدث تصاميمنا الفنية</h2>
+
+      <p class="text-gray-700 leading-relaxed">اكتشف مجموعة من أجمل التصاميم الفنية على أحواض النباتات التي نقدمها لعملائنا الكرام. كل قطعة فريدة من نوعها وتصنع يدوياً بأعلى مستويات الجودة.</p>
+
+    </section>
+
+
+
+    <section id="gallery" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 px-4"></section>
+
+
+
+    <div class="flex justify-center items-center mt-6 gap-4">
+
+      <button onclick="changePage(-1)" class="bg-green-300 hover:bg-green-400 px-4 py-2 rounded shadow">السابقة</button>
+
+      <span id="page-num" class="text-lg font-semibold">1</span>
+
+      <button onclick="changePage(1)" class="bg-green-300 hover:bg-green-400 px-4 py-2 rounded shadow">التالي</button>
+
+    </div>
+
+
+
+    <!-- إعلان جوجل أدسنس -->
+
+    <div class="my-8 text-center">
+
+      <ins class="adsbygoogle"
+
+           style="display:block"
+
+           data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+
+           data-ad-slot="XXXXXXXXXX"
+
+           data-ad-format="auto"
+
+           data-full-width-responsive="true"></ins>
+
+      <script>
+
+           (adsbygoogle = window.adsbygoogle || []).push({});
+
+      </script>
+
+    </div>
+
+
+
+    <div class="text-center my-8">
+
+      <a href="order.html" class="inline-block bg-orange-400 hover:bg-orange-500 text-white text-xl font-bold py-3 px-8 rounded-xl shadow-lg transition-all duration-300">أطلب الآن</a>
+
+    </div>
+
+
+
+    <section class="mt-12 bg-green-50 p-6 rounded-lg">
+
+      <h2 class="text-2xl font-bold text-green-700 mb-4 text-right">فوائد الرسم على أحواض النباتات</h2>
+
+      <div class="grid md:grid-cols-2 gap-6">
+
+        <div class="text-right">
+
+          <h3 class="text-xl font-semibold text-green-600 mb-2">إضافة جمالية فريدة</h3>
+
+          <p class="text-gray-700">تحول الأحواض المزخرفة نباتاتك المنزلية إلى قطع فنية تضيف لمسة جمالية مميزة لمكانك.</p>
+
+        </div>
+
+        <div class="text-right">
+
+          <h3 class="text-xl font-semibold text-green-600 mb-2">هدايا مميزة</h3>
+
+          <p class="text-gray-700">تعتبر أحواض النباتات المزخرفة هدايا مميزة تناسب جميع المناسبات وتترك انطباعاً لا ينسى.</p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+
+  <footer class="bg-green-800 text-white py-8">
+
+    <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-3 gap-8">
+
+      <div class="text-right">
+
+        <h3 class="text-xl font-bold mb-4">فن الرسم على أحواض النباتات</h3>
+
+        <p>متخصصون في تصميم وتزيين أحواض النباتات بأيدي فنانين محترفين لتقديم أجمل القطع الفنية لنباتاتك.</p>
+
+      </div>
+
+      <div class="text-right">
+
+        <h3 class="text-xl font-bold mb-4">روابط سريعة</h3>
+
+        <ul class="space-y-2">
+
+          <li><a href="index.html" class="hover:text-orange-300">الرئيسية</a></li>
+
+          <li><a href="about.html" class="hover:text-orange-300">من نحن</a></li>
+
+          <li><a href="contact.html" class="hover:text-orange-300">اتصل بنا</a></li>
+
+        </ul>
+
+      </div>
+
+      <div class="text-right">
+
+        <h3 class="text-xl font-bold mb-4">تواصل معنا</h3>
+
+        <p>الهاتف: <span class="font-bold">00213673697554</span></p>
+
+        <p>boubchirabdelilah@gmail.com</p>
+
+        <div class="mt-4">
+
+          <a href="#" class="inline-block bg-blue-600 text-white p-2 rounded-full mr-2"><i class="fab fa-facebook-f"></i></a>
+
+          <a href="#" class="inline-block bg-pink-600 text-white p-2 rounded-full mr-2"><i class="fab fa-instagram"></i></a>
+
+          <a href="#" class="inline-block bg-blue-400 text-white p-2 rounded-full"><i class="fab fa-twitter"></i></a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="max-w-6xl mx-auto px-4 pt-6 mt-6 border-t border-green-700 text-center">
+
+      <p>&copy; 2023 فن الرسم على أحواض النباتات. جميع الحقوق محفوظة.</p>
+
+    </div>
+
+  </footer>
+
+
+
+  <!-- عنصر التكبير -->
+
+  <div id="zoom" class="zoom-overlay hidden" onclick="closeZoom()">
+
+    <img id="zoom-img" src="" alt="تكبير الصورة">
+
+  </div>
+
+
+
+  <!-- مودال السلة -->
+
+  <div id="cart-modal" class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center hidden z-50">
+
+    <div class="bg-white p-6 rounded-xl shadow-xl w-full max-w-md relative">
+
+      <button onclick="closeCart()" class="absolute top-2 left-3 text-gray-500 hover:text-red-500 text-2xl font-bold">&times;</button>
+
+      <h2 class="text-xl font-bold text-green-700 mb-4 text-center">سلة المشتريات</h2>
+
+      <div id="cart-items" class="space-y-4 max-h-60 overflow-y-auto mb-4"></div>
+
+      <div class="text-center text-lg font-bold text-green-800 mb-4">
+
+        السعر الإجمالي: <span id="cart-total">0</span> دج
+
+      </div>
+
+      <a href="order.html" class="block bg-orange-400 text-white text-center py-3 rounded-lg font-bold hover:bg-orange-500 transition-all">
+
+        تأكيد الطلب
+
+      </a>
+
+    </div>
+
+  </div>
+
+
+
   <script>
-    const cart = JSON.parse(localStorage.getItem("cartItems")) || [];
-    const baseTotal = parseInt(localStorage.getItem("cartTotal")) || 0;
 
-    const gallery = document.getElementById("selected-items");
-    const totalPriceEl = document.getElementById("total-price");
-    const modelNamesEl = document.getElementById("model-names");
+    const products = [
 
-    const stateSelect = document.getElementById("state-select");
-    const deliverySelect = document.getElementById("delivery-type");
+      { image: 'https://i.imgur.com/ybehaTa.jpeg', price: 300, alt: "حوض نباتات مزخرف برسومات زهور" },
 
-    const deliveryPrices = {
-      "الجزائر": 600,
-      "البليدة": 700,
-      "وهران": 800,
-      "قسنطينة": 850,
-      "سطيف": 750,
-      // أضف باقي الأسعار حسب الولايات
-    };
+      { image: 'https://i.imgur.com/2IEF8Jb.jpeg', price: 300, alt: "تصميم حوض نباتات باللون الأزرق" },
 
-    const modelNames = [];
+      { image: 'https://i.imgur.com/8rkpIfq.jpeg', price: 400, alt: "حوض نباتات برسومات هندسية إسلامية" },
 
-    cart.forEach(item => {
-      const container = document.createElement("div");
-      container.className = "flex flex-col items-center";
+      { image: 'https://i.imgur.com/2IEF8Jb.jpeg', price: 400, alt: "حوض نباتات كلاسيكي باللون البني" },
 
-      const img = document.createElement("img");
-      img.src = item.image;
-      img.className = "w-full rounded-lg shadow-md object-cover aspect-square";
+      { image: 'https://i.imgur.com/2IEF8Jb.jpeg', price: 400, alt: "حوض نباتات بتصميم عصري" },
 
-      const price = document.createElement("p");
-      price.textContent = `${item.price} دج`;
-      price.className = "text-sm text-green-700 mt-2 font-semibold";
+      { image: 'https://i.imgur.com/2IEF8Jb.jpeg', price: 400, alt: "حوض نباتات صغير الحجم" },
 
-      container.appendChild(img);
-      container.appendChild(price);
-      gallery.appendChild(container);
+      { image: 'https://i.imgur.com/2IEF8Jb.jpeg', price: 500, alt: "حوض نباتات كبير الحجم بتصميم فريد" },
 
-      modelNames.push(item.image.split("/").pop());
-    });
+      { image: 'https://i.imgur.com/2IEF8Jb.jpeg', price: 300, alt: "حوض نباتات بتصميم بسيط وأنيق" },
 
-    modelNamesEl.value = modelNames.join(", ");
+      { image: 'https://i.imgur.com/2IEF8Jb.jpeg', price: 300, alt: "حوض نباتات بتصميم ريفي" },
 
-    function updateTotalPrice() {
-      const selectedState = stateSelect.value;
-      const deliveryType = deliverySelect.value;
+      { image: 'https://i.imgur.com/abc132.jpg', price: 400, alt: "حوض نباتات بتصميم ميني مال" },
 
-      const baseFee = deliveryPrices[selectedState] || 0;
-      const finalFee = deliveryType === "منزلي" ? baseFee + 200 : baseFee;
+      { image: 'https://i.imgur.com/abc133.jpg', price: 500, alt: "حوض نباتات بتصميم ثلاثي الأبعاد" },
 
-      totalPriceEl.textContent = baseTotal + finalFee;
+      { image: 'https://i.imgur.com/abc134.jpg', price: 600, alt: "حوض نباتات فاخر بتصميم ملكي" },
+
+    ];
+
+
+
+    let currentPage = 1;
+
+    const perPage = 8;
+
+    let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+
+
+
+    function renderGallery() {
+
+      const gallery = document.getElementById("gallery");
+
+      gallery.innerHTML = "";
+
+      const start = (currentPage - 1) * perPage;
+
+      const pageProducts = products.slice(start, start + perPage);
+
+
+
+      pageProducts.forEach((product, index) => {
+
+        const container = document.createElement("div");
+
+        container.className = "flex flex-col items-center";
+
+
+
+        const squareWrapper = document.createElement("div");
+
+        squareWrapper.className = "w-full aspect-square overflow-hidden rounded-lg shadow-md cursor-pointer";
+
+
+
+        const img = document.createElement("img");
+
+        img.src = product.image;
+
+        img.alt = product.alt;
+
+        img.loading = "lazy";
+
+        img.className = "w-full h-full object-cover hover:scale-110 transition-transform duration-300";
+
+        img.onclick = () => showZoom(product.image);
+
+
+
+        squareWrapper.appendChild(img);
+
+
+
+        const name = document.createElement("p");
+
+        name.className = "mt-2 text-sm text-gray-700";
+
+        name.textContent = product.alt;
+
+
+
+        const price = document.createElement("p");
+
+        price.className = "text-lg font-bold text-green-700 mt-1";
+
+        price.textContent = `السعر: ${product.price} دج`;
+
+
+
+        const button = document.createElement("button");
+
+        button.textContent = "أضف إلى السلة";
+
+        button.className = "mt-2 bg-green-400 hover:bg-orange-500 text-white px-3 py-1 rounded text-sm shadow";
+
+        button.onclick = () => addToCart(product.image, product.price, product.alt);
+
+
+
+        container.appendChild(squareWrapper);
+
+        container.appendChild(name);
+
+        container.appendChild(price);
+
+        container.appendChild(button);
+
+        gallery.appendChild(container);
+
+      });
+
+
+
+      document.getElementById("page-num").textContent = currentPage;
+
     }
 
-    stateSelect.addEventListener("change", updateTotalPrice);
-    deliverySelect.addEventListener("change", updateTotalPrice);
+
+
+    function changePage(step) {
+
+      const maxPage = Math.ceil(products.length / perPage);
+
+      currentPage = Math.max(1, Math.min(currentPage + step, maxPage));
+
+      renderGallery();
+
+    }
+
+
+
+    function showZoom(src) {
+
+      document.getElementById("zoom-img").src = src;
+
+      document.getElementById("zoom").classList.remove("hidden");
+
+    }
+
+
+
+    function closeZoom() {
+
+      document.getElementById("zoom").classList.add("hidden");
+
+    }
+
+
+
+    function addToCart(image, price, alt) {
+
+      cartItems.push({ image, price, alt });
+
+      localStorage.setItem("cartItems", JSON.stringify(cartItems));
+
+      localStorage.setItem("cartTotal", getTotal());
+
+      updateCartCount();
+
+      alert("تمت الإضافة إلى السلة!");
+
+    }
+
+
+
+    function getTotal() {
+
+      return cartItems.reduce((sum, item) => sum + item.price, 0);
+
+    }
+
+
+
+    function openCart() {
+
+      const container = document.getElementById("cart-items");
+
+      container.innerHTML = "";
+
+      cartItems.forEach((item, index) => {
+
+        const div = document.createElement("div");
+
+        div.className = "flex items-center gap-3 border-b pb-2";
+
+
+
+        const img = document.createElement("img");
+
+        img.src = item.image;
+
+        img.alt = item.alt;
+
+        img.className = "w-16 h-16 rounded object-cover";
+
+
+
+        const p = document.createElement("p");
+
+        p.textContent = `${item.price} دج`;
+
+        p.className = "font-semibold text-green-700";
+
+
+
+        const deleteButton = document.createElement("button");
+
+        deleteButton.textContent = "حذف";
+
+        deleteButton.className = "text-red-500 hover:text-red-700 font-semibold";
+
+        deleteButton.onclick = () => removeItem(index);
+
+
+
+        div.appendChild(img);
+
+        div.appendChild(p);
+
+        div.appendChild(deleteButton);
+
+        container.appendChild(div);
+
+      });
+
+
+
+      document.getElementById("cart-total").textContent = getTotal();
+
+      document.getElementById("cart-modal").classList.remove("hidden");
+
+
+
+      updateCartCount();
+
+    }
+
+
+
+    function closeCart() {
+
+      document.getElementById("cart-modal").classList.add("hidden");
+
+    }
+
+
+
+    function removeItem(index) {
+
+      cartItems.splice(index, 1);
+
+      localStorage.setItem("cartItems", JSON.stringify(cartItems));
+
+      localStorage.setItem("cartTotal", getTotal());
+
+      openCart();
+
+      updateCartCount();
+
+    }
+
+
+
+    function updateCartCount() {
+
+      const cartCount = document.getElementById("cart-count");
+
+      cartCount.textContent = cartItems.length;
+
+    }
+
+
+
+    document.addEventListener("DOMContentLoaded", renderGallery);
+
   </script>
+
 </body>
+
 </html>
